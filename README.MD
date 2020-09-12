@@ -1,7 +1,7 @@
 # Python scripts
 Some basic Python scripts to automate stuff at work.
 
-**Table migration (Robohelp to Flare)** - a series of scripts to aid a migration of documentation from RoboHelp to Flare
+**Table migration (RoboHelp to Flare)** - a series of scripts to aid a migration of documentation from RoboHelp to Flare
 
 
 **Misc**:
