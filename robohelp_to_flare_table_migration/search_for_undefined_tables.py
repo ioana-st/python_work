@@ -11,6 +11,6 @@ for root, dirs, files in os.walk(path):
             file_path = os.path.join(root,file)
             with open (file_path, encoding="utf-8") as soup_html:
                 soup = BeautifulSoup(soup_html, 'lxml')
-                non_class_tables_in_file = soup.find_all('table', class_=lambda value: value and value.startswith('MyClass'))
+                non_class_tables_in_file = soup.find_all('table', class_=lambda value: value and value.startswith('MyClass')) # Selects all tables that have a class starting with a specific string.
             total_non_class_tables = total_non_class_tables + len(non_class_tables_in_file)
 print(total_non_class_tables)
