@@ -5,7 +5,7 @@ The scripts in this section are based on the BeautifulSoup4 library and were use
 
 One part of the challenge came from the fact that RoboHelp does not use <thead> and <tbody> tags and Flare needs those tags to properly apply its flavor of table styles. The other part of the challenge came from the inconsistency of the styles used in the RoboHelp projects being migrated.
 
-## Scripts
+## Main Scripts
 The main scripts are meant to be used in sequence:
 * **1_identify_table.py**
 
@@ -17,7 +17,9 @@ This script applies <thead>, <th> and <tbody> tags to the tables; depending on t
 
 * **3_replace_table_tag.py**
 
-In Flare, each table style is defined in a separate CSS file. For Flare to be able to apply a style to a table, the table needs to have a class (called `Table-NameOfCSS`) and a style (in the format `mc-table-style: url('relative_path_to_CSS_file')`). Because the files with tables may be at various levels of the hierarchy, the script calculates the relative path from the HTML file to the CSS file, then applies the Flare class and style to each table that has a specific class.
+In Flare, each table style is defined in a separate CSS file. For Flare to be able to apply a style to a table, the table needs to have a class (called `Table-NameOfCSS`) and a style (in the format `mc-table-style: url('relative_path_to_CSS_file')`). Because the files with tables may be at various levels of the hierarchy, the script calculates the relative path from the HTML file to the CSS file, then applies the Flare class and style to each table.
 
-The other script was used for troubleshooting:
-* **find_mismatched_tbody.py** - outputs a list of tables that have <tbody> tags without </tbody> or the other way around (to asses the damage after a bad search and replace)
+# Other Scripts
+* **find_mismatched_tbody.py** - outputs a list of tables that have <tbody> tags without </tbody> or the other way around (to asses the damage after a bad search and replace).
+* **make_html_list.py** - turns FrameMaker-style lists (paragraphs with a specific class) and turns them into proper HTML bulleted lists.
+* **procedure_table_to_list.py** - turns "procedure tables" (where the first column contains the step number and the second column contains the actual step) into proper HTML numbered lists.
